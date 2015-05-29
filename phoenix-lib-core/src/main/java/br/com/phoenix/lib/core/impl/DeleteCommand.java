@@ -19,6 +19,7 @@ public class DeleteCommand extends AbstractCommand<Object> {
             logger.debug("Objeto com valor : " + object);
         }
         session.delete(object);
+        session.flush();
         return null;
 	}
 
