@@ -19,6 +19,7 @@ public class SaveCommand extends AbstractCommand<Object> {
             logger.debug("Objeto com valor : " + object);
         }
 		session.saveOrUpdate(object);
+		session.flush();
 		return object;
 	}
 
