@@ -59,7 +59,7 @@ public class EmailTemplateMethod extends AbstractTemplateMethod {
 	protected String smtp;
 
 	protected String mailSmtpHost;
-	
+
 	protected String mailSmtpPort;
 
 	protected String mailSmtpAuth;
@@ -89,7 +89,7 @@ public class EmailTemplateMethod extends AbstractTemplateMethod {
 	public void configureMimeType() {
 		this.mimeType = TEXT_PLAIN;
 	}
-	
+
 	public EmailTemplateMethod setMimeType(String string){
 		this.mimeType = string;
 		return this;
@@ -121,7 +121,7 @@ public class EmailTemplateMethod extends AbstractTemplateMethod {
 	}
 
 	@Override
-	public final void sendAuthenticationEmail() throws Exception {
+	public void sendAuthenticationEmail() throws Exception {
 
 		if (logger.isDebugEnabled()) {
 			StringBuilder sb = new StringBuilder("Enviando o email para o(s) destinatario(s): ");
@@ -134,8 +134,8 @@ public class EmailTemplateMethod extends AbstractTemplateMethod {
 		props.put("mail.smtp.starttls.enable", "true");
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "587");
-		
-		
+
+
 		final Authenticator auth = new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(emailOrigem, passEmailOrigem);
