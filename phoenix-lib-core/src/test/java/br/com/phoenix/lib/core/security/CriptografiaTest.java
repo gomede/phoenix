@@ -13,9 +13,10 @@ public class CriptografiaTest {
 
 	@Test
 	public void testCriptografar() {
-		Criptografia criptografia = new Criptografia();
-		String criptografar = criptografia.criptografar("teste");
-		String criptografar2 = criptografia.criptografar("teste");
+		Encryptable<String> encrypt = new Criptografia<>();
+		String criptografar =  encrypt.cipher("teste");
+		String criptografar2 =  encrypt.cipher("teste");
+		System.out.println(criptografar);
 		assertEquals(criptografar, criptografar2);
 		assertNotEquals("teste", criptografar);
 	}
