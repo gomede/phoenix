@@ -14,6 +14,7 @@ public class SaveCommand extends AbstractCommand<Object> {
 
 	@Override
 	public Object execute(Session session) {
+		session.clear();
         if (logger.isDebugEnabled()) {
             logger.debug("Salvando objeto do tipo : " + object.getClass().getName());
             logger.debug("Objeto com valor : " + object);
